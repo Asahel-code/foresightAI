@@ -67,7 +67,7 @@ docker compose exec backend python app/db/seed_rdf_graph.py
 
 ### 5. Open the application
 
-Open the frontend UI at http://localhost:3000 and verify that the health endpoint responds at http://localhost:8000/health.
+Open the frontend UI at http://localhost:3000 and verify that the health endpoint responds at http://localhost:8000/api/v1/health.
 
 ## API conventions
 
