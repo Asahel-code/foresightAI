@@ -2,8 +2,6 @@
 
 ForeSightAI is an ontology-driven early warning and early action decision support platform for climate and disaster risk teams. It combines a web dashboard, a REST API, a knowledge graph, and reasoning workflows to help users turn environmental observations into explainable recommendations.
 
-This guide is written for technical teams, analysts, and partners working in an ICPAC-style climate-service environment where transparency, reproducibility, and operational usefulness are essential.
-
 ## Project purpose
 
 ForeSightAI is designed to help teams:
