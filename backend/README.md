@@ -84,6 +84,6 @@ Run the backend tests with:
 pytest -q
 ```
 
-## Notes for ICPAC-style operations
+## Notes for Contributors
 
 Keep the backend logic transparent and evidence-based. When adding new regions, hazards, or indicators, ensure the ontology, database records, and RDF export remain aligned.

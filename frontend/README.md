@@ -62,10 +62,6 @@ The frontend reaches the backend through the versioned API prefix:
 /api/v1/recommendations
 ```
 
-## UI guidance for ICPAC-style use
-
-The interface should remain clear, evidence-led, and easy to interpret for operational users. Favor simple visual hierarchy, readable status indicators, and concise recommendations over clutter.
-
 ## Notes
 
 When adding new frontend features, keep the map, alert summary, and reasoning evidence aligned so users can quickly understand what triggered a recommendation.
