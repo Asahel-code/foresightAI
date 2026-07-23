@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.foresightai.org/ontology/geography#"
+     xml:base="http://www.foresightai.org/ontology/geography"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.foresightai.org/ontology/geography"/>
+
+    <!-- Classes -->
+
+    <owl:Class rdf:about="http://www.foresightai.org/ontology/geography#Location">
+        <rdfs:comment xml:lang="en">Represents a geographical place, region, or administrative unit.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Datatype Properties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.foresightai.org/ontology/geography#hasName">
+        <rdfs:domain rdf:resource="http://www.foresightai.org/ontology/geography#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">The name of a geographical location.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.foresightai.org/ontology/geography#hasLatitude">
+        <rdfs:domain rdf:resource="http://www.foresightai.org/ontology/geography#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The latitude coordinate of a geographical location.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.foresightai.org/ontology/geography#hasLongitude">
+        <rdfs:domain rdf:resource="http://www.foresightai.org/ontology/geography#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The longitude coordinate of a geographical location.</rdfs:comment>
+    </owl:DatatypeProperty>
+</rdf:RDF>

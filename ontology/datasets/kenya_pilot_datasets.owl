@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<!--
+  ForeSightAI — Kenya Pilot Dataset Catalog
+  ==========================================
+  This OWL file documents the external data sources ingested during
+  Step 4 (Ingest Pilot Data) for the Kenya / Tana River County pilot.
+
+  Each dataset instance is linked to its originating DataSource and
+  records: format, geographic coverage, hazard relevance, and the
+  timestamp of last ingestion.
+
+  IRI base: http://www.foresightai.org/datasets/kenya#
+-->
+<rdf:RDF
+    xmlns="http://www.foresightai.org/datasets/kenya#"
+    xml:base="http://www.foresightai.org/datasets/kenya"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ds="http://www.foresightai.org/ontology/datasets#"
+    xmlns:geo="http://www.foresightai.org/ontology/geography#">
+
+    <owl:Ontology rdf:about="http://www.foresightai.org/datasets/kenya">
+        <owl:imports rdf:resource="http://www.foresightai.org/ontology/datasets"/>
+        <rdfs:label xml:lang="en">ForeSightAI Kenya Pilot Dataset Catalog</rdfs:label>
+        <rdfs:comment xml:lang="en">
+            Catalog of data sources and datasets ingested for the Kenya / Tana River County
+            flood early warning pilot (Step 4 of the ForeSightAI MVP implementation).
+        </rdfs:comment>
+    </owl:Ontology>
+
+    <!-- ================================================================ -->
+    <!-- DATA SOURCES                                                      -->
+    <!-- ================================================================ -->
+
+    <!-- OpenStreetMap -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_osm">
+        <rdfs:label xml:lang="en">OpenStreetMap</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://www.openstreetmap.org</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            Community-maintained global map dataset providing roads, buildings,
+            administrative boundaries, and points of interest.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- CHIRPS -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_chirps">
+        <rdfs:label xml:lang="en">CHIRPS — Climate Hazards Group InfraRed Precipitation with Station</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://www.chc.ucsb.edu/data/chirps</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            Quasi-global rainfall estimates at 0.05° resolution from 1981 to present,
+            combining satellite infrared data with ground station measurements.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- GloFAS -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_glofas">
+        <rdfs:label xml:lang="en">GloFAS — Global Flood Awareness System</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://www.globalfloods.eu</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            Global hydrological forecasting system providing ensemble river discharge
+            forecasts at up to 30-day lead time. Operated by Copernicus/ECMWF.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- ECMWF -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_ecmwf">
+        <rdfs:label xml:lang="en">ECMWF — European Centre for Medium-Range Weather Forecasts</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://www.ecmwf.int</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            Global numerical weather prediction model providing medium-range
+            atmospheric forecasts including precipitation, temperature, and wind.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- Kenya National Bureau of Statistics -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_knbs">
+        <rdfs:label xml:lang="en">Kenya National Bureau of Statistics (KNBS)</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://www.knbs.or.ke</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            Official national statistics provider for Kenya, including census data,
+            poverty indices, and demographic vulnerability indicators.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- Kenya Red Cross / OCHA -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_ocha">
+        <rdfs:label xml:lang="en">OCHA — UN Office for the Coordination of Humanitarian Affairs</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://data.humdata.org</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            Humanitarian data platform providing administrative boundaries,
+            population estimates, and humanitarian response datasets for Kenya.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- Tana River Gauging Network (KMD) -->
+    <ds:DataSource rdf:about="http://www.foresightai.org/datasets/kenya#src_kmd_gauges">
+        <rdfs:label xml:lang="en">Kenya Meteorological Department — River Gauge Network</rdfs:label>
+        <ds:hasSourceURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >https://www.meteo.go.ke</ds:hasSourceURL>
+        <rdfs:comment xml:lang="en">
+            In-situ river water level measurements from gauge stations operated by the
+            Kenya Meteorological Department along the Tana River basin.
+        </rdfs:comment>
+    </ds:DataSource>
+
+    <!-- ================================================================ -->
+    <!-- DATASETS                                                          -->
+    <!-- ================================================================ -->
+
+    <!-- 1. Kenya Admin Boundaries -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_admin_boundaries">
+        <rdfs:label xml:lang="en">Kenya Administrative Boundaries — Counties and Sub-Counties</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_ocha"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoJSON / WKT (simplified)</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            Country and sub-national administrative boundaries for Kenya at levels 0
+            (country), 1 (county), and 2 (sub-county). Pilot coverage: Kenya, Tana River
+            County, Bura, Garsen, and Galole sub-counties.
+        </rdfs:comment>
+    </ds:Dataset>
+
+    <!-- 2. Tana River Gauge Readings -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_tana_river_gauges">
+        <rdfs:label xml:lang="en">Tana River Water Level Gauge Readings — Hola, Bura, Garsen</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_kmd_gauges"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CSV / time-series (simulated for MVP)</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            Water level readings in metres from three gauge stations along the Tana River
+            (Hola, Bura, Garsen) at 6-hour intervals over 48 hours, covering a developing
+            flood event. Thresholds: warning ≥ 5.0 m, critical ≥ 6.0 m at Hola station.
+        </rdfs:comment>
+    </ds:Dataset>
+
+    <!-- 3. CHIRPS Rainfall -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_chirps_rainfall">
+        <rdfs:label xml:lang="en">CHIRPS Daily Rainfall Estimates — Tana River County</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_chirps"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoTIFF / point extraction (mm/day)</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            Daily rainfall accumulation estimates (mm/day) from CHIRPS covering Tana River
+            County over a 48-hour period. Used to confirm upstream rainfall driving the
+            observed river level rise.
+        </rdfs:comment>
+    </ds:Dataset>
+
+    <!-- 4. GloFAS Discharge Forecast -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_glofas_forecast">
+        <rdfs:label xml:lang="en">GloFAS 5-Day River Discharge Forecast — Tana River</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_glofas"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NetCDF / point extraction (m³/s)</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            GloFAS ensemble discharge forecast for the Tana River at Hola over the
+            next 5 days (24h to 120h lead time). Peak forecast discharge 1 180 m³/s
+            at 72h lead time — classified as critical.
+        </rdfs:comment>
+    </ds:Dataset>
+
+    <!-- 5. ECMWF Weather Forecast -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_ecmwf_forecast">
+        <rdfs:label xml:lang="en">ECMWF Atmospheric Forecast — Tana River County</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_ecmwf"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GRIB2 / point extraction</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            ECMWF medium-range weather forecast providing temperature and wind data
+            for Tana River County as supplementary atmospheric context for the
+            flood early warning assessment.
+        </rdfs:comment>
+    </ds:Dataset>
+
+    <!-- 6. Vulnerability and Population Data -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_vulnerability_indicators">
+        <rdfs:label xml:lang="en">Kenya Vulnerability and Population Indicators — Tana River County</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_knbs"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CSV / tabular</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            Socio-economic vulnerability indicators for Tana River County and its
+            sub-counties, derived from the Kenya Population and Housing Census 2019
+            and Kenya Poverty Index data. Indicators: Poverty Index, Age Dependency
+            Ratio, Flood Susceptibility Index, Access to Safe Water, Population
+            Density, Female-Headed Households, Households with Disability.
+        </rdfs:comment>
+    </ds:Dataset>
+
+    <!-- 7. Infrastructure and Exposure Assets -->
+    <ds:Dataset rdf:about="http://www.foresightai.org/datasets/kenya#ds_infrastructure">
+        <rdfs:label xml:lang="en">Critical Infrastructure and Exposure Assets — Tana River County</rdfs:label>
+        <ds:hasSource rdf:resource="http://www.foresightai.org/datasets/kenya#src_osm"/>
+        <ds:hasFormat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GeoJSON (point features)</ds:hasFormat>
+        <ds:lastIngested rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-07-20T00:00:00</ds:lastIngested>
+        <rdfs:comment xml:lang="en">
+            Critical facilities and infrastructure exposure assets in Tana River County
+            including bridges (Hola, Garsen), hospitals, schools, water treatment plants,
+            the Bura Irrigation Scheme, the Tana Delta Mangrove Floodplain, and
+            the Garsen Town Settlement. Sourced from OpenStreetMap and enhanced with
+            population and asset value estimates.
+        </rdfs:comment>
+    </ds:Dataset>
+
+</rdf:RDF>
